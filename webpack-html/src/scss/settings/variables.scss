@@ -1,0 +1,19 @@
+
+// base project colors
+$color-white: #fff;
+$color-dark: #000;
+
+// font props
+$font-family: "Roboto", sans-serif;
+
+// base elements colors
+$bg-color-white: $color-white;
+$bg-color-dark: lighten($color-dark, 10%);
+
+// media
+$media-1200: 1200px;
+$media-992: 992px;
+$media-768: 768px;
+$media-576: 576px;
+
+@import './mixins.scss'
