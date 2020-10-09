@@ -11,7 +11,7 @@ module.exports = (env = {}) => {
 
   const getStyleLoaders = () => {
     return [
-      isProd ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'
+      isProd ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader'
     ]
   }
 
@@ -76,7 +76,7 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.s[ca]ss/,
-          use: [...getStyleLoaders(), 'sass-loader']
+          use: [...getStyleLoaders(), 'postcss-loader', 'sass-loader']
         }
       ]
     },
