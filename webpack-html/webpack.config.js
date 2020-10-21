@@ -2,6 +2,10 @@ var path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 
 module.exports = (env = {}) => {
 
@@ -30,15 +34,27 @@ module.exports = (env = {}) => {
       plugins.push(
         new MiniCssExtractPlugin({
           filename: '[name]-[hash:7].css'
-        })
+        }),
+        new CleanWebpackPlugin(),
       )
     }
     return plugins
   }
 
+  const getOptimisations = () => {
+    return {
+      minimizer: [
+        new UglifyJsPlugin(),
+        new OptimizeCssAssetsPlugin()
+      ],
+    }
+  }
+
   return {
     output: {
       publicPath: isProd ? './' : isDev && "/",
+      path: path.resolve(__dirname, 'build'),
+      filename: '[name].[hash:7].js',
     },
     mode: isProd ? 'production' : isDev && "development",
     module: {
@@ -81,6 +97,7 @@ module.exports = (env = {}) => {
       ]
     },
     plugins: getPlugins(),
+    optimization: isProd && getOptimisations(),
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       historyApiFallback: true,
