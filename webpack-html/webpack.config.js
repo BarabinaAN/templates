@@ -66,13 +66,36 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.(jpg|svg|png|jpeg)$/,
-          use: [{
-            loader: 'file-loader',
-            options: {
-              outpath: 'images',
-              name: 'images/[name].[ext]'
-            }
-          }]
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                outpath: 'images',
+                name: 'images/[name].[ext]'
+              }
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                },
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: [0.65, 0.90],
+                  speed: 4
+                },
+                gifsicle: {
+                  interlaced: false,
+                },
+                webp: {
+                  quality: 75
+                }
+              }
+            },
+          ]
         },
         {
           test: /\.(eot|ttf|woff|woff2|ico)$/,
@@ -97,7 +120,7 @@ module.exports = (env = {}) => {
       ]
     },
     plugins: getPlugins(),
-    optimization: isProd && getOptimisations(),
+    optimization: isProd ? getOptimisations() : {},
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       historyApiFallback: true,
