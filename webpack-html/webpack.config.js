@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 
 module.exports = (env = {}) => {
@@ -19,10 +20,39 @@ module.exports = (env = {}) => {
     ]
   }
 
+  const getFavicons = () => {
+    const favicons = {
+      appleStartup: false,  
+      coast: false,
+    }
+
+    if(!isProd) {
+      return {
+        ...favicons,
+        android: false, 
+        appleIcon: false,
+        windows: false, 
+        yandex: false,
+        firefox: false,
+      }
+    }
+
+    return favicons
+  }
+
   const getPlugins = () => {
     let plugins = [
       new HtmlWebpackPlugin({
         template: 'public/index.html'
+      }),
+      new FaviconsWebpackPlugin({
+        logo: './src/images/favicon.svg',
+        prefix: 'favicons/',
+        favicons: {
+          background: '#ddd',
+          theme_color: '#333',
+          icons: getFavicons()
+        }
       }),
       new webpack.ProvidePlugin({
         $: 'jquery',
@@ -122,7 +152,7 @@ module.exports = (env = {}) => {
     plugins: getPlugins(),
     optimization: isProd ? getOptimisations() : {},
     devServer: {
-      contentBase: path.join(__dirname, 'dist'),
+      contentBase: path.join(__dirname, 'build'),
       historyApiFallback: true,
       open: true
     }
