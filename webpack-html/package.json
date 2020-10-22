@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "build": "webpack --env.mode=prod",
     "js-lint": "eslint ./src webpack.config.js",
-    "js-lint:fix": "eslint ./src webpack.config.js --fix",
+    "js-lint:fix": "eslint ./src webpack.config.js --fix --color",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Natalya Barabina",
@@ -30,7 +30,9 @@
     "favicons-webpack-plugin": "^4.2.0",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
     "image-webpack-loader": "^7.0.1",
+    "lint-staged": "^10.4.2",
     "mini-css-extract-plugin": "^0.11.0",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
@@ -59,5 +61,16 @@
   "browserslist": [
     "> 1%",
     "last 10 versions"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run js-lint:fix",
+      "git add"
+    ]
+  }
 }

@@ -1,1 +1,3 @@
-console.log('test');
+const test = 'pre-commit && husky test';
+
+console.log(test);
