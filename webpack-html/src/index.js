@@ -6,8 +6,8 @@ import './images/gasprom.jpg';
 import './images/nokia.jpg';
 
 // styles
-import './scss/fonts/index.scss'
+import './scss/fonts/index.scss';
 import './scss/index.scss';
 
 // scripts
-import './js/main.js';
+import './js/main';
