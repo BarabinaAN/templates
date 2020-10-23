@@ -1,9 +1,5 @@
-import 'normalize.css/normalize.css';
-
 // images
-import './images/saha.jpg';
-import './images/gasprom.jpg';
-import './images/nokia.jpg';
+import './images/any/any-cite.png';
 
 // styles
 import './scss/fonts/index.scss';

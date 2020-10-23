@@ -1,6 +1,7 @@
 
 // base project colors
 $color-white: #fff;
+$color-active:#078cd6;
 $color-dark: #000;
 
 // font props
@@ -10,10 +11,18 @@ $font-family: "Roboto", sans-serif;
 $bg-color-white: $color-white;
 $bg-color-dark: lighten($color-dark, 10%);
 
+// screen size 
+$xxl: 1320px;
+$xl: 1140px;
+$lg: 960px;
+$md: 720px;
+$sm: 540px;
+
 // media
-$media-1200: 1200px;
-$media-992: 992px;
-$media-768: 768px;
-$media-576: 576px;
+$media-xxl: 1400px;
+$media-xl: 1200px;
+$media-lg: 992px;
+$media-md: 768px;
+$media-sm: 576px;
 
 @import './mixins.scss'
