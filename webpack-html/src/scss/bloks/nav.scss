@@ -10,5 +10,6 @@
    }
    &.is-disable {
       color: darken($color-active, 15%); 
+      cursor: default;
    }
 }

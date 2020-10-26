@@ -1,5 +1,6 @@
 // images
-import './images/any/any-cite.png';
+import './images/any/any-cite.svg';
+import './images/icon/favicon.svg';
 
 // styles
 import './scss/fonts/index.scss';

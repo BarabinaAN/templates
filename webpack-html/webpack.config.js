@@ -42,7 +42,7 @@ module.exports = (env = {}) => {
             template: 'public/index.html',
          }),
          new FaviconsWebpackPlugin({
-            logo: './src/images/favicon.svg',
+            logo: './src/images/icon/favicon.svg',
             prefix: 'favicons/',
             favicons: {
                background: '#ddd',
