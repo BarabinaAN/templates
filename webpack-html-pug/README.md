@@ -1,8 +1,9 @@
-# HTML + SCSS + Webpack
+# HTML + SCSS + Webpack + PUG
 
 ### Конфигурация включает поддержку
 * CSS
 * SCSS
+* PUG
 * сброс стилей - normalize.css
 * расстановку autoprefixer, в т.ч. для grid
 * Jquery
