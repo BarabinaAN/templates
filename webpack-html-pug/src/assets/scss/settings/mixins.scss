@@ -1,11 +1,17 @@
-// media requests
+@mixin container() {
+   max-width: $xxl;
+   margin: 0 auto;
+   padding: 0 $gap;
+   height: 100%;
+}
 
-@mixin media-from($screen) {
+// media requests
+@mixin media-min($screen) {
    @media screen and (min-width: $screen) {
       @content;
    }
 }
-@mixin media-to($screen) {
+@mixin media-max($screen) {
    @media screen and (max-width: $screen - 1px) {
       @content;
    }

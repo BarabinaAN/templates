@@ -1,12 +1,9 @@
-doctype html
-html
-head
-meta(charset = 'utf-8')
-meta(name='viewport', content="initial-scale=1.0, width=device-width")
-title Webpack app
-body
-include ../header/header.pug
-h1 homepage
-
-a(href="about.html") About page
-img(src="./assets/images/any/any-cite.svg")
+include ../includes/header.pug
+main.main
+  .container
+    h1 homepage
+    img(src="./assets/images/any/any-cite.svg")
+    .grid
+      .col-2 test
+      .col-2 test
+include ../includes/footer.pug

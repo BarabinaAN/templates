@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__link {
+  margin: 0 10px;
+  &.is-active {
+     text-decoration: underline;
+  }
+  &.is-disable {
+     color: darken($color-active, 15%); 
+     cursor: default;
+  }
+}

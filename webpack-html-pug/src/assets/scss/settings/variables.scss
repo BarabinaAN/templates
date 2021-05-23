@@ -4,15 +4,25 @@ $color-white: #fff;
 $color-active:#d68e4b;
 $color-dark: #00192e;
 
-//#078cd6
-//#000
+// base elements colors
+$color-bg: lighten($color-dark, 10%);
+$color-bg-inverse: #fff;
+
+// if need add more colors, for example below:
+// $color-text: $color-dark;
+// $color-text-inverse: #fff;
+// $color-header: $color-dark;
+// $color-header-inverse: #fff;
+// $color-link: $color-dark;
+// $color-link-inverse: #fff;
+// $color-btn: $color-dark;
+// $color-btn-inverse: #fff;
+
+// padding
+$gap: 15px;
 
 // font props
 $font-family: "Roboto", sans-serif;
-
-// base elements colors
-$bg-color-white: $color-white;
-$bg-color-dark: lighten($color-dark, 10%);
 
 // screen size 
 $xxl: 1320px;
@@ -27,5 +37,3 @@ $media-xl: 1200px;
 $media-lg: 992px;
 $media-md: 768px;
 $media-sm: 576px;
-
-@import './mixins.scss'

@@ -1,0 +1,10 @@
+.grid {
+  margin-right: $gap;
+  margin-left: $gap;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

@@ -1,4 +1,19 @@
 .header {
-  background-color: rgb(109, 116, 185);
-  display: grid;
+  background-color: $color-bg;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  @include container;
+  &__logo {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    img {
+       height: 100%;
+    }
+    span {
+       margin-left: 10px;
+    }
+  }
 }
