@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  background-color: $bg-color-white;
+  font-family: $font-family;
+  color: $color-dark;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: $color-active;
+  &:hover {
+    color: lighten($color-active, 15%);
+  }
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.txt-color-active {
+  color: $color-active; 
+}

@@ -1,0 +1,13 @@
+.main {
+   min-height: calc(100vh - 180px);
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: auto auto;
+   & > * {
+      align-self: center;
+   } 
+   @include media-to ($media-md){
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+   }  
+}

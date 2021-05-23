@@ -1,0 +1,30 @@
+// Roboto family
+@font-face {
+    font-family: "Roboto";
+    src: url("./Roboto/400/Roboto-Regular.eot");
+    src: url("./Roboto/400/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+        url("./Roboto/400/Roboto-Regular.ttf") format("truetype"),
+        url("./Roboto/400/Roboto-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./Roboto/700/Roboto-Bold.eot");
+    src: url("./Roboto/700/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+        url("./Roboto/700/Roboto-Bold.ttf") format("truetype"),
+        url("./Roboto/700/Roboto-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./Roboto/700/Roboto-BoldItalic.eot");
+    src: url("./Roboto/700/Roboto-BoldItalic.eot?#iefix") format("embedded-opentype"),
+        url("./Roboto/700/Roboto-BoldItalic.ttf") format("truetype"),
+        url("./Roboto/700/Roboto-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
